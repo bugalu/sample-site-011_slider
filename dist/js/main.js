@@ -1,6 +1,6 @@
 "use strict";
 
-//███ 各要素を取得 ███
+/* ███ 各要素を取得 ███ */
 
 /* --- 個別slide本体() --- */
 var sliderItems = document.querySelectorAll('.slider-item');
@@ -17,37 +17,50 @@ console.log(sliderPause);
 /* --- 操作ボタン --- */
 
 var prev = document.getElementById('prev');
-var next = document.getElementById('next'); //███ オプション ███
-//開始スライド（一枚目 = 0）
+var next = document.getElementById('next');
+/* ███ オプション ███ */
 
-var sliderIndex = 0; //スライドの時間間隔
+/* 開始スライド（一枚目 = 0） */
 
-var intervalMillisecond = 5000; //自動再生の有無
+var sliderIndex = 0;
+/* スライドの時間間隔 */
 
-var autoPlay = true; //自動再生の方向反転
+var intervalMillisecond = 6000;
+/* 自動再生の有無 */
 
-var sliderReverse = false; //███ 動作設定 ███
-//開始スライド位置
+var autoPlay = true;
+/* 自動再生の方向反転 */
 
-sliderWrapper.style.left = sliderIndex * -sliderWidth + 'px'; //スライドフレームのクリック回数
+var sliderReverse = false;
+/* ███ 動作設定 ███ */
 
-var frameClickCount = 0; //スライド一枚の横幅（px単位）
+/* 開始スライド位置 */
 
-var sliderWidth = sliderFrame.clientWidth; //ウィンドウリサイズに伴うスライド横幅の再取得
+sliderWrapper.style.left = sliderIndex * -sliderWidth + 'px';
+/* スライドフレームのクリック回数 */
+
+var frameClickCount = 0;
+/* スライド一枚の横幅（px単位）*/
+
+var sliderWidth = sliderFrame.clientWidth;
+/* ウィンドウリサイズに伴うスライド横幅の再取得 */
 
 window.addEventListener('resize', function () {
   sliderWidth = sliderFrame.clientWidth; //ズレを修正
 
   prev.click();
-}); //prev（戻る）ボタンの動作
+});
+/* prev（戻る）ボタンの動作 */
 
 prev.addEventListener('click', function () {
   previousSlider();
-}); //next（進む）ボタンの動作
+});
+/* next（進む）ボタンの動作 */
 
 next.addEventListener('click', function () {
   nextSlider();
-}); //スライドを次に進める動作
+});
+/* スライドを次に進める動作 */
 
 function nextSlider() {
   sliderIndex++;
@@ -57,7 +70,8 @@ function nextSlider() {
   }
 
   sliderWrapper.style.left = sliderIndex * -sliderWidth + 'px';
-} //スライダーを前に戻す動作
+}
+/* スライダーを前に戻す動作 */
 
 
 function previousSlider() {
@@ -68,7 +82,8 @@ function previousSlider() {
   }
 
   sliderWrapper.style.left = sliderIndex * -sliderWidth + 'px';
-} //自動再生
+}
+/* 自動再生 */
 
 
 var timerId = window.setInterval(function () {
@@ -77,7 +92,8 @@ var timerId = window.setInterval(function () {
   } else {
     nextSlider();
   }
-}, intervalMillisecond); //一時停止
+}, intervalMillisecond);
+/* 一時停止 */
 
 sliderFrame.addEventListener('click', function () {
   frameClickCount++;

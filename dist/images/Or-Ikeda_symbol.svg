@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 79 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="アートボード1" transform="matrix(0.928697,0,0,1.03258,0,-4.7158)">
+        <rect x="0" y="4.567" width="84.074" height="75.433" style="fill:none;"/>
+        <g transform="matrix(1.07678,0.000603638,-0.000671162,0.968445,-7.40234,3.79336)">
+            <g>
+                <g transform="matrix(1,0,0,1,1,0)">
+                    <circle cx="44.575" cy="40" r="35.433" style="fill:rgb(235,235,235);fill-opacity:0;stroke:rgb(33,151,129);stroke-width:3.75px;"/>
+                </g>
+                <g transform="matrix(1,0,0,1,1,0)">
+                    <g>
+                        <rect x="53.886" y="48.811" width="10.63" height="10.163" style="fill:rgb(33,151,129);"/>
+                        <rect x="53.886" y="34.919" width="10.63" height="10.163" style="fill:rgb(18,165,138);"/>
+                        <rect x="53.886" y="21.749" width="10.63" height="10.163" style="fill:rgb(4,180,148);"/>
+                        <rect x="39.26" y="48.811" width="10.63" height="10.163" style="fill:rgb(39,176,151);"/>
+                        <rect x="39.26" y="34.919" width="10.63" height="10.163" style="fill:rgb(21,193,161);"/>
+                        <rect x="39.26" y="21.749" width="10.63" height="10.163" style="fill:rgb(4,210,172);"/>
+                        <rect x="25.185" y="48.811" width="10.63" height="10.163" style="fill:rgb(44,201,172);"/>
+                        <rect x="25.185" y="34.919" width="10.63" height="10.163" style="fill:rgb(24,220,184);"/>
+                        <rect x="25.185" y="21.749" width="10.63" height="10.163" style="fill:rgb(5,240,197);"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

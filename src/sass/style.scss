@@ -408,8 +408,7 @@ template,
 html {
   box-sizing: border-box;
   height: 100%;
-  font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
-    "Meiryo UI", "メイリオ", Meiryo, sans-serif;
+  font-family: "M PLUS 1p", "Lato", sans-serif;
   line-height: 1.5;
 }
 
@@ -428,6 +427,11 @@ img {
   max-width: 100%;
   height: auto;
   vertical-align: bottom;
+}
+
+h2,
+h3 {
+  font-family: "M PLUS 1p", sans-serif;
 }
 
 *[lang="en"] {
@@ -475,10 +479,19 @@ img {
 }
 /* section
    ------------------------------------------------------ */
+.l-section {
+  margin-top: 1.5rem;
+  & p {
+    margin-top: 0.5rem;
+  }
+}
 /* grid
    ------------------------------------------------------ */
 /* footer
    ------------------------------------------------------ */
+.l-footer {
+  margin-top: 2.5rem;
+}
 
 /* ======================================================
    Object(装飾と内部配置) *ページ内配置は'Layout'に記述
@@ -506,6 +519,15 @@ img {
 .p-header {
   position: relative;
 }
+.p-header__logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.p-header__title-text {
+  margin-left: 2.5rem;
+}
+
 .p-header__nav {
   position: absolute;
   top: 50%;
