@@ -1,0 +1,22 @@
+extends layouts/base.pug
+block contents
+  main.l-main
+    .slider-container
+      .slider-frame#slider-frame
+        .slider-wrapper#slider-wrapper
+          .slider-item
+            p.slider-text 1
+            img(src="images/photo1.jpg" width="800" height="534")
+          .slider-item
+            p.slider-text 2
+            img(src="images/photo2.jpg" width="800" height="534")
+          .slider-item
+            p.slider-text 3
+            img(src="images/photo3.jpg" width="800" height="534")
+          .slider-item
+            p.slider-text 4
+            img(src="images/photo4.jpg" width="800" height="534")
+        .sliderPause#sliderPause 写真をクリックするとスライドを再開します
+      .slider-controls
+        button.slider-button.prev#prev &Leftarrow;
+        button.slider-button.next#next &Rightarrow;

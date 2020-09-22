@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Sample | OR-IKEDA</title>
+    <script src="https://kit.fontawesome.com/ea672cdcce.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="l-header p-header" id="header">
+      <div class="l-container">
+        <h1 class="l-header__site-title" id="site-title" lang="en">Slider Sample</h1>
+        <nav class="l-header__nav p-header__nav">
+          <ul class="l-header__nav-list p-header__nav-list">
+            <li class="l-header__nav-item p-header__nav-item" lang="en">Top</li>
+            <li class="l-header__nav-item p-header__nav-item" lang="en">About Us</li>
+            <li class="l-header__nav-item p-header__nav-item" lang="en">Contact</li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="l-main">
+      <div class="slider-container">
+        <div class="slider-frame" id="slider-frame">
+          <div class="slider-wrapper" id="slider-wrapper">
+            <div class="slider-item">
+              <p class="slider-text">1</p><img src="images/photo1.jpg" width="800" height="534">
+            </div>
+            <div class="slider-item">
+              <p class="slider-text">2</p><img src="images/photo2.jpg" width="800" height="534">
+            </div>
+            <div class="slider-item">
+              <p class="slider-text">3</p><img src="images/photo3.jpg" width="800" height="534">
+            </div>
+            <div class="slider-item">
+              <p class="slider-text">4</p><img src="images/photo4.jpg" width="800" height="534">
+            </div>
+          </div>
+          <div class="sliderPause" id="sliderPause">写真をクリックするとスライドを再開します</div>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-button prev" id="prev">&Leftarrow;</button>
+          <button class="slider-button next" id="next">&Rightarrow;</button>
+        </div>
+      </div>
+    </main>
+    <footer class="p-footer" role="contentinfo">
+      <address class="p-footer__address"><small>&copy;2020&nbsp;<a class="l-footer__anchor" href="#">OR-Ikeda</a></small></address>
+    </footer>
+  </body>
+</html>
