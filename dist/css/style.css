@@ -548,6 +548,12 @@ h3 {
     float: right; }
 
 /**
+ * section
+ */
+section i {
+  margin: 0 0.2rem; }
+
+/**
  * hero
  */
 /**
