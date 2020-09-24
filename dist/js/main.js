@@ -138,10 +138,14 @@ function previousSlider_loop() {
   sliderWrapper.style.transition = 'transform 0s';
   sliderWrapper.style.transform = 'translateX(-100%)';
   sliderWrapper.removeChild(sliderItems[sliderItems.length - 1]);
+  prev.setAttribute('disabled', true);
   setTimeout(function () {
     sliderWrapper.style.transition = 'transform 1s';
     sliderWrapper.style.transform = 'translateX(0%)';
-  }, 0);
+    setTimeout(function () {
+      prev.removeAttribute('disabled');
+    }, 1000);
+  }, 1);
 }
 /* ███ 自動再生 ███ */
 
