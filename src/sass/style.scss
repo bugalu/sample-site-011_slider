@@ -568,7 +568,8 @@ h3 {
   display: flex;
   position: relative;
   left: 0;
-  transition: left 0.5s;
+  transform: translateX(0%);
+  transition: 0.5s;
 }
 .slider-item {
   position: relative;

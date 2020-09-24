@@ -522,7 +522,9 @@ h3 {
   left: 0;
   display: -ms-flexbox;
   display: flex;
-  transition: left 0.5s; }
+  transition: 0.5s; 
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);}
 
 .slider-item {
   position: relative;
