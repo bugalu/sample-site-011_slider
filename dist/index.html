@@ -1,70 +1,69 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- twitter card ↓-->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@esalsita" />
-  <meta property="og:url" content="https://or-ikeda.work/sample011" />
-  <meta property="og:title" content="JSだけでスライダー作ってみました" />
-  <meta property="og:description" content="jQueryは使わず、Swiperなどのプラグインも使わずにスライダーを作ってみました😵" />
-  <meta property="og:image" content="https://or-ikeda.work/sample011/images/twitter_card.jpg" />
-  <!-- twitter card ↑-->
-  <title>Slider Sample | OR-IKEDA</title>
-  <script src="https://kit.fontawesome.com/ea672cdcce.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Lato&amp;family=M+PLUS+1p&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
-</head>
-<body>
-  <header class="l-header p-header" id="header">
-    <div class="l-container">
-      <h1 class="l-header__site-title" id="site-title" lang="en"> <img class="p-header__logo" src="images/Or-Ikeda_symbol.svg" width="36px" height="36px"><span class="p-header__title-text">Slider Sample</span></h1>
-      <nav class="l-header__nav p-header__nav">
-        <ul class="l-header__nav-list p-header__nav-list">
-          <li class="l-header__nav-item p-header__nav-item" lang="en"><a href="#">Top</a></li>
-          <li class="l-header__nav-item p-header__nav-item" lang="en"><a href="https://github.com/bugalu/sample-site-011_slider">Code</a></li>
-          <li class="l-header__nav-item p-header__nav-item" lang="en"><a href="https://or-ikeda.net/contact/">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main class="l-main l-container">
-    <div class="slider-container">
-      <div class="slider-frame" id="slider-frame">
-        <div class="slider-wrapper" id="slider-wrapper">
-          <div class="slider-item">
-            <p class="slider-text">1</p><img src="images/photo1.jpg" width="800" height="534">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- twitter card ↓--><meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@ESalsita" />
+<meta property="og:url" content="https://or-ikeda.work/sample011"/>
+<meta property="og:title" content="JSでスライダー作ってみました" />
+<meta property="og:description" content="jQueryは使わず、Swiperなどのプラグインも使わずに作ってみました😵" />
+<meta property="og:image" content="https://or-ikeda.work/sample011/images/twitter_card.jpg" />
+    <!-- twitter card ↑-->
+    <title>Slider Sample | OR-IKEDA</title>
+    <script src="https://kit.fontawesome.com/ea672cdcce.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&amp;family=M+PLUS+1p&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="l-header p-header" id="header">
+      <div class="l-container">
+        <h1 class="l-header__site-title" id="site-title" lang="en"> <img class="p-header__logo" src="images/Or-Ikeda_symbol.svg" width="36px" height="36px"><span class="p-header__title-text">Slider Sample</span></h1>
+        <nav class="l-header__nav p-header__nav">
+          <ul class="l-header__nav-list p-header__nav-list">
+            <li class="l-header__nav-item p-header__nav-item" lang="en"><a href="#">Top</a></li>
+            <li class="l-header__nav-item p-header__nav-item" lang="en"><a href="https://github.com/bugalu/sample-site-011_slider">Code</a></li>
+            <li class="l-header__nav-item p-header__nav-item" lang="en"><a href="https://or-ikeda.net/contact/">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="l-main l-container">
+      <div class="slider-container">
+        <div class="slider-frame" id="slider-frame">
+          <div class="slider-wrapper" id="slider-wrapper">
+            <div class="slider-item">
+              <p class="slider-text">1</p><img src="images/photo1.jpg" width="800" height="534">
+            </div>
+            <div class="slider-item">
+              <p class="slider-text">2</p><img src="images/photo2.jpg" width="800" height="534">
+            </div>
+            <div class="slider-item">
+              <p class="slider-text">3</p><img src="images/photo3.jpg" width="800" height="534">
+            </div>
+            <div class="slider-item">
+              <p class="slider-text">4</p><img src="images/photo4.jpg" width="800" height="534">
+            </div>
           </div>
-          <div class="slider-item">
-            <p class="slider-text">2</p><img src="images/photo2.jpg" width="800" height="534">
-          </div>
-          <div class="slider-item">
-            <p class="slider-text">3</p><img src="images/photo3.jpg" width="800" height="534">
-          </div>
-          <div class="slider-item">
-            <p class="slider-text">4</p><img src="images/photo4.jpg" width="800" height="534">
-          </div>
+          <div class="sliderPause" id="sliderPause">写真をクリックするとスライドを再開します</div>
         </div>
-        <div class="sliderPause" id="sliderPause">写真をクリックするとスライドを再開します</div>
+        <div class="slider-controls">
+          <button class="slider-button prev" id="prev">&Leftarrow;</button>
+          <button class="slider-button next" id="next">&Rightarrow;</button>
+        </div>
       </div>
-      <div class="slider-controls">
-        <button class="slider-button prev" id="prev">&Leftarrow;</button>
-        <button class="slider-button next" id="next">&Rightarrow;</button>
-      </div>
-    </div>
-    <section class="l-section">
-      <h2>このページについて</h2>
-      <p>Web制作の勉強の為に作成したサンプルページです。一般的に使われることが多い<i>jQuery</i>や<i><a href="https://swiperjs.com/">Swiper</a></i>などの、ライブラリ、プラグインを使わず、HTML、CSS、JavaScriptだけでコンテンツスライダーを作ってみる事を目的として作成しました。</p>
-    </section>
-    <section class="l-section">
-      <h2>使用画像について</h2>
-      <p>函館市観光部が提供くださっている無料ライブラリー<a href="https://www.hakobura.jp/photo_library/">「函館観光画像ライブラリー」</a>の画像を使用しました。</p>
-    </section>
-  </main>
-  <footer class="l-footer p-footer" role="contentinfo">
-    <address class="p-footer__address"><small>&copy;2020&nbsp;<a class="l-footer__anchor" href="https://or-ikeda.net">OR-Ikeda</a></small></address>
-  </footer>
-</body>
+      <section class="l-section">
+        <h2>このページについて</h2>
+        <p>Web制作の勉強の為に作成したサンプルページです。一般的に使われることが多い<i>jQuery</i>や<i><a href="https://swiperjs.com/">Swiper</a></i>などの、ライブラリ、プラグインを使わず、HTML、CSS、JavaScriptだけでコンテンツスライダーを作ってみる事を目的として作成しました。</p>
+      </section>
+      <section class="l-section">
+        <h2>使用画像について</h2>
+        <p>函館市観光部が提供くださっている無料ライブラリー<a href="https://www.hakobura.jp/photo_library/">「函館観光画像ライブラリー」</a>の画像を使用しました。</p>
+      </section>
+    </main>
+    <footer class="l-footer p-footer" role="contentinfo">
+      <address class="p-footer__address"><small>&copy;2020&nbsp;<a class="l-footer__anchor" href="https://or-ikeda.net">OR-Ikeda</a></small></address>
+    </footer>
+  </body>
 </html>
