@@ -22,9 +22,12 @@ var next = document.getElementById('next');
 /* 開始スライド（一枚目 = 0） */
 
 var sliderIndex = 0;
-/* スライドの時間間隔 */
+/* スライドの動作間隔(ミリ秒) */
 
 var intervalMillisecond = 6000;
+/* スライドの動作スピード(ミリ秒) */
+
+var transitionDuration = 1000;
 /* 自動再生の有無 */
 
 var autoPlay = true;
@@ -119,14 +122,20 @@ function previousSlider_drag() {
 function nextSlider_loop() {
   var sliderItems = document.querySelectorAll('.slider-item');
   var clone = sliderItems[0].cloneNode(true);
-  sliderWrapper.style.transition = 'transform 1s';
+  sliderWrapper.style.transition = "transform ".concat(transitionDuration, "ms");
   sliderWrapper.style.transform = 'translateX(-100%)';
+  prev.setAttribute('disabled', true);
+  next.setAttribute('disabled', true);
   setTimeout(function () {
     sliderWrapper.style.transition = 'transform 0s';
     sliderWrapper.style.transform = 'translateX(0)';
     sliderWrapper.removeChild(sliderItems[0]);
     sliderWrapper.appendChild(clone);
-  }, 1000);
+    setTimeout(function () {
+      prev.removeAttribute('disabled');
+      next.removeAttribute('disabled');
+    }, 1);
+  }, "".concat(transitionDuration));
 }
 /* 逆順 */
 
@@ -139,12 +148,14 @@ function previousSlider_loop() {
   sliderWrapper.style.transform = 'translateX(-100%)';
   sliderWrapper.removeChild(sliderItems[sliderItems.length - 1]);
   prev.setAttribute('disabled', true);
+  next.setAttribute('disabled', true);
   setTimeout(function () {
-    sliderWrapper.style.transition = 'transform 1s';
+    sliderWrapper.style.transition = "transform ".concat(transitionDuration, "ms");
     sliderWrapper.style.transform = 'translateX(0%)';
     setTimeout(function () {
       prev.removeAttribute('disabled');
-    }, 1000);
+      next.removeAttribute('disabled');
+    }, "".concat(transitionDuration));
   }, 1);
 }
 /* ███ 自動再生 ███ */
