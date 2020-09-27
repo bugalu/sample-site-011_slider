@@ -93,17 +93,11 @@ function nextSlider_loop() {
   const clone = sliderItems[0].cloneNode(true);
   sliderWrapper.style.transition = `transform ${transitionDuration}ms`;
   sliderWrapper.style.transform = 'translateX(-100%)';
-  prev.setAttribute('disabled', true);
-  next.setAttribute('disabled', true);
   setTimeout(function () {
     sliderWrapper.style.transition = 'transform 0s';
     sliderWrapper.style.transform = 'translateX(0)';
     sliderWrapper.removeChild(sliderItems[0]);
     sliderWrapper.appendChild(clone);
-    setTimeout(function () {
-      prev.removeAttribute('disabled');
-      next.removeAttribute('disabled');
-    }, 1);
   }, `${transitionDuration}`)
 }
 /* 逆順 */
@@ -114,17 +108,21 @@ function previousSlider_loop() {
   sliderWrapper.style.transition = 'transform 0s';
   sliderWrapper.style.transform = 'translateX(-100%)';
   sliderWrapper.removeChild(sliderItems[sliderItems.length - 1]);
-  prev.setAttribute('disabled', true);
-  next.setAttribute('disabled', true);
   setTimeout(function () {
     sliderWrapper.style.transition = `transform ${transitionDuration}ms`;
     sliderWrapper.style.transform = 'translateX(0%)';
-    setTimeout(function () {
-      prev.removeAttribute('disabled');
-      next.removeAttribute('disabled');
-    }, `${transitionDuration}`);
   }, 1);
 }
+
+/* ███ スライド動作中のボタン無効化 ███ */
+sliderWrapper.addEventListener('transitionstart', () => {
+  prev.setAttribute('disabled', true);
+  next.setAttribute('disabled', true);
+});
+sliderWrapper.addEventListener('transitionend', () => {
+  prev.removeAttribute('disabled');
+  next.removeAttribute('disabled');
+});
 
 /* ███ 自動再生 ███ */
 let timerId = window.setInterval(() => {

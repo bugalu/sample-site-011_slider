@@ -124,17 +124,11 @@ function nextSlider_loop() {
   var clone = sliderItems[0].cloneNode(true);
   sliderWrapper.style.transition = "transform ".concat(transitionDuration, "ms");
   sliderWrapper.style.transform = 'translateX(-100%)';
-  prev.setAttribute('disabled', true);
-  next.setAttribute('disabled', true);
   setTimeout(function () {
     sliderWrapper.style.transition = 'transform 0s';
     sliderWrapper.style.transform = 'translateX(0)';
     sliderWrapper.removeChild(sliderItems[0]);
     sliderWrapper.appendChild(clone);
-    setTimeout(function () {
-      prev.removeAttribute('disabled');
-      next.removeAttribute('disabled');
-    }, 1);
   }, "".concat(transitionDuration));
 }
 /* 逆順 */
@@ -147,19 +141,23 @@ function previousSlider_loop() {
   sliderWrapper.style.transition = 'transform 0s';
   sliderWrapper.style.transform = 'translateX(-100%)';
   sliderWrapper.removeChild(sliderItems[sliderItems.length - 1]);
-  prev.setAttribute('disabled', true);
-  next.setAttribute('disabled', true);
   setTimeout(function () {
     sliderWrapper.style.transition = "transform ".concat(transitionDuration, "ms");
     sliderWrapper.style.transform = 'translateX(0%)';
-    setTimeout(function () {
-      prev.removeAttribute('disabled');
-      next.removeAttribute('disabled');
-    }, "".concat(transitionDuration));
   }, 1);
 }
-/* ███ 自動再生 ███ */
+/* ███ スライド動作中のボタン無効化 ███ */
 
+
+sliderWrapper.addEventListener('transitionstart', function () {
+  prev.setAttribute('disabled', true);
+  next.setAttribute('disabled', true);
+});
+sliderWrapper.addEventListener('transitionend', function () {
+  prev.removeAttribute('disabled');
+  next.removeAttribute('disabled');
+});
+/* ███ 自動再生 ███ */
 
 var timerId = window.setInterval(function () {
   if (sliderReverse === true) {
