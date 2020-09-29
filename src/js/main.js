@@ -7,7 +7,6 @@ const sliderWrapper = document.getElementById('slider-wrapper');
 const sliderFrame = document.getElementById('slider-frame');
 /* ---------- スライドフレームの一時停止マーク ---------- */
 const sliderPause = document.getElementById('sliderPause');
-
 /* --- 操作ボタン --- */
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
@@ -24,7 +23,7 @@ const autoPlay = true;
 /* 自動再生の方向反転 */
 const sliderReverse = false;
 /* ループ再生モード */
-const loop = true;
+const loop = false;
 
 /* ███ ボタン ███ */
 /* prev（戻る）ボタンのクリックイベント */
@@ -39,16 +38,22 @@ next.addEventListener('click', () => {
 /* ███ 再生モードによる動作分岐 ███ */
 /* スライドを次に進める動作 */
 function nextSlider() {
+  //スライド中のボタン無効化
+  disabled();
+  //スライド動作分岐
   if (loop) {
-    nextSlider_loop(); //中身はこれから作る！
+    nextSlider_loop();
   } else {
     nextSlider_drag();
   }
 }
 /* スライダーを前に戻す動作 */
 function previousSlider() {
+  //スライド中のボタン無効化
+  disabled();
+  //スライド動作分岐
   if (loop) {
-    previousSlider_loop(); //中身はこれから作る！
+    previousSlider_loop();
   } else {
     previousSlider_drag();
   }
@@ -115,14 +120,14 @@ function previousSlider_loop() {
 }
 
 /* ███ スライド動作中のボタン無効化 ███ */
-sliderWrapper.addEventListener('transitionstart', () => {
+function disabled() {
   prev.setAttribute('disabled', true);
   next.setAttribute('disabled', true);
-});
-sliderWrapper.addEventListener('transitionend', () => {
-  prev.removeAttribute('disabled');
-  next.removeAttribute('disabled');
-});
+  setTimeout(function () {
+    prev.removeAttribute('disabled');
+    next.removeAttribute('disabled');
+  }, `${transitionDuration}`);
+}
 
 /* ███ 自動再生 ███ */
 let timerId = window.setInterval(() => {

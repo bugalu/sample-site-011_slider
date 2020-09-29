@@ -36,7 +36,7 @@ var autoPlay = true;
 var sliderReverse = false;
 /* ループ再生モード */
 
-var loop = true;
+var loop = false;
 /* ███ ボタン ███ */
 
 /* prev（戻る）ボタンのクリックイベント */
@@ -54,8 +54,11 @@ next.addEventListener('click', function () {
 /* スライドを次に進める動作 */
 
 function nextSlider() {
+  //スライド中のボタン無効化
+  disabled(); //スライド動作分岐
+
   if (loop) {
-    nextSlider_loop(); //中身はこれから作る！
+    nextSlider_loop();
   } else {
     nextSlider_drag();
   }
@@ -64,8 +67,11 @@ function nextSlider() {
 
 
 function previousSlider() {
+  //スライド中のボタン無効化
+  disabled(); //スライド動作分岐
+
   if (loop) {
-    previousSlider_loop(); //中身はこれから作る！
+    previousSlider_loop();
   } else {
     previousSlider_drag();
   }
@@ -149,15 +155,16 @@ function previousSlider_loop() {
 /* ███ スライド動作中のボタン無効化 ███ */
 
 
-sliderWrapper.addEventListener('transitionstart', function () {
+function disabled() {
   prev.setAttribute('disabled', true);
   next.setAttribute('disabled', true);
-});
-sliderWrapper.addEventListener('transitionend', function () {
-  prev.removeAttribute('disabled');
-  next.removeAttribute('disabled');
-});
+  setTimeout(function () {
+    prev.removeAttribute('disabled');
+    next.removeAttribute('disabled');
+  }, "".concat(transitionDuration));
+}
 /* ███ 自動再生 ███ */
+
 
 var timerId = window.setInterval(function () {
   if (sliderReverse === true) {

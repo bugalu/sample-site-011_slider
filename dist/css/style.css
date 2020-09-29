@@ -522,7 +522,7 @@ h3 {
   left: 0;
   display: -ms-flexbox;
   display: flex;
-  transition: 0s; 
+  transition: 1s; 
   -webkit-transform: translateX(0%);
           transform: translateX(0%);}
 
