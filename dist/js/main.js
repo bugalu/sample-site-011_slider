@@ -33,10 +33,10 @@ var transitionDuration = 1000;
 var autoPlay = true;
 /* 自動再生の方向反転 */
 
-var sliderReverse = false;
+var sliderReverse = true;
 /* ループ再生モード */
 
-var loop = false;
+var loop = true;
 /* ███ ボタン ███ */
 
 /* prev（戻る）ボタンのクリックイベント */
@@ -141,6 +141,7 @@ function nextSlider_loop() {
 
 
 function previousSlider_loop() {
+  console.log('OWOWOWOW');
   var sliderItems = document.querySelectorAll('.slider-item');
   var clone = sliderItems[sliderItems.length - 1].cloneNode(true);
   sliderWrapper.prepend(clone);

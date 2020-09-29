@@ -21,9 +21,9 @@ const transitionDuration = 1000;
 /* 自動再生の有無 */
 const autoPlay = true;
 /* 自動再生の方向反転 */
-const sliderReverse = false;
+const sliderReverse = true;
 /* ループ再生モード */
-const loop = false;
+const loop = true;
 
 /* ███ ボタン ███ */
 /* prev（戻る）ボタンのクリックイベント */
@@ -107,6 +107,7 @@ function nextSlider_loop() {
 }
 /* 逆順 */
 function previousSlider_loop() {
+  console.log('OWOWOWOW');
   const sliderItems = document.querySelectorAll('.slider-item');
   const clone = sliderItems[sliderItems.length - 1].cloneNode(true);
   sliderWrapper.prepend(clone);
